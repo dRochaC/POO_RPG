@@ -1,0 +1,7 @@
+C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\bin\Debug\RPGPoo.exe.config
+C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\bin\Debug\RPGPoo.exe
+C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\bin\Debug\RPGPoo.pdb
+C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\obj\Debug\RPGPoo.csprojResolveAssemblyReference.cache
+C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\obj\Debug\RPGPoo.csproj.CoreCompileInputs.cache
+C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\obj\Debug\RPGPoo.exe
+C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\obj\Debug\RPGPoo.pdb
