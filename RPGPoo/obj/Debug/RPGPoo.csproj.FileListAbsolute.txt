@@ -5,3 +5,10 @@ C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\obj\Debug\RPGPoo.csprojResolveAssem
 C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\obj\Debug\RPGPoo.csproj.CoreCompileInputs.cache
 C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\obj\Debug\RPGPoo.exe
 C:\Users\Raphael\source\repos\rpg-poo\RPGPoo\obj\Debug\RPGPoo.pdb
+C:\Users\icaro\Documents\SMOVE\Visual Studio\rpg-poo\RPGPoo\obj\Debug\RPGPoo.exe
+C:\Users\icaro\Documents\SMOVE\Visual Studio\rpg-poo\RPGPoo\obj\Debug\RPGPoo.pdb
+C:\Users\icaro\Documents\SMOVE\Visual Studio\rpg-poo\RPGPoo\bin\Debug\RPGPoo.exe.config
+C:\Users\icaro\Documents\SMOVE\Visual Studio\rpg-poo\RPGPoo\bin\Debug\RPGPoo.exe
+C:\Users\icaro\Documents\SMOVE\Visual Studio\rpg-poo\RPGPoo\bin\Debug\RPGPoo.pdb
+C:\Users\icaro\Documents\SMOVE\Visual Studio\rpg-poo\RPGPoo\obj\Debug\RPGPoo.csprojAssemblyReference.cache
+C:\Users\icaro\Documents\SMOVE\Visual Studio\rpg-poo\RPGPoo\obj\Debug\RPGPoo.csproj.CoreCompileInputs.cache

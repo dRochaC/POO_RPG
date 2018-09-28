@@ -14,7 +14,8 @@ namespace RPGPoo
         {
             var randomNumber = new Random().Next(enemyNames.Count);
             var enemyName = enemyNames[randomNumber];
-            var enemy = new Enemy(enemyName);
+            var giveExp = new Random().Next(100) + 1;
+            var enemy = new Enemy(enemyName, giveExp);
 
             return enemy;
         }

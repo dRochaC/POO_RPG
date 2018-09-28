@@ -22,5 +22,15 @@ namespace RPGPoo
         public int Attack { get => attack; set => attack = value; }
         public int Defense { get => defense; set => defense = value; }
 
+        public void takeDamage(int damage)
+        {
+            life -= damage;
+        }
+
+        public bool isDead()
+        {
+            return life <= 0;
+        }
+
     }
 }

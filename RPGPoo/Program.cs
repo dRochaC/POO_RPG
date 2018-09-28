@@ -40,6 +40,9 @@ namespace RPGPoo
                 var inFight = true;
                 while (inFight)
                 {
+                    
+
+                    Console.Clear();
                     Console.WriteLine("\n\n-> Controles: Atacar [a] - Defender [d]\n\n");
                     Console.Write("Sua Vida: \t\t");
                     Console.Write(hero.Life);
@@ -73,12 +76,35 @@ namespace RPGPoo
                     switch(actionType)
                     {
                         case ActionType.ATTACK:
-
+                            enemy.takeDamage(hero.Attack);
+                            hero.takeDamage(0);
                             break;
 
                         case ActionType.DEFENSE:
 
                             break;
+                    }
+
+                    if (hero.isDead())
+                    {
+                        Console.WriteLine("\n\nMorreu o hero");
+
+                        inFight = false;
+                        isRunning = false;
+
+                    }
+                    else if (enemy.isDead())
+                    {
+                        hero.TotalExp += enemy.GiveExp;
+
+                        Console.Clear();
+                        Console.WriteLine("\n\nVoce venceu, obteve " + enemy.GiveExp + " xp");
+                        Console.WriteLine("Seu Total de Xp é: " + hero.TotalExp);
+                        
+
+                        Console.ReadKey();
+
+                        inFight = false;
                     }
 
                 }

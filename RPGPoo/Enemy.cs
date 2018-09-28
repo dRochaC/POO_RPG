@@ -8,9 +8,15 @@ namespace RPGPoo
 {
     class Enemy : BaseUnit
     {
-        public Enemy(String name)
+
+        int giveExp;
+
+        public Enemy(String name, int giveExp)
         {
             this.name = name;
+            this.GiveExp = giveExp;
         }
+
+        public int GiveExp { get => giveExp; set => giveExp = value; }
     }
 }

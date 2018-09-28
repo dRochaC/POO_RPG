@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ActionType.cs" />
     <Compile Include="BaseUnit.cs" />
+    <Compile Include="TurnTime.cs" />
     <Compile Include="ClassType.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="EnemyCreator.cs" />
