@@ -31,11 +31,11 @@ namespace RPGPoo
                 var enemy = EnemyCreator.createRandomEnemy();
 
                 Console.Write("Nome: ");
-                Console.Write(enemy.Name);
+                Console.Write(enemy.name);
                 Console.Write("\tAtk: ");
-                Console.Write(enemy.Attack);
+                Console.Write(enemy.attack);
                 Console.Write("\tDefense: ");
-                Console.Write(enemy.Defense);
+                Console.Write(enemy.defense);
 
                 var inFight = true;
                 while (inFight)
@@ -45,13 +45,13 @@ namespace RPGPoo
                     Console.Clear();
                     Console.WriteLine("\n\n-> Controles: Atacar [a] - Defender [d]\n\n");
                     Console.Write("Sua Vida: \t\t");
-                    Console.Write(hero.Life);
+                    Console.Write(hero.life);
                     Console.Write("\tSua Mana: \t\t");
-                    Console.WriteLine(hero.Mana);
+                    Console.WriteLine(hero.mana);
                     Console.Write("Vida do inimigo: \t");
-                    Console.Write(enemy.Life);
+                    Console.Write(enemy.life);
                     Console.Write("\tMana do inimigo: \t");
-                    Console.WriteLine(enemy.Mana);
+                    Console.WriteLine(enemy.mana);
 
                     var actionType = ActionType.NONE;
                     var controlNotSelected = true;
@@ -76,7 +76,7 @@ namespace RPGPoo
                     switch(actionType)
                     {
                         case ActionType.ATTACK:
-                            enemy.takeDamage(hero.Attack);
+                            enemy.takeDamage(hero.attack);
                             hero.takeDamage(0);
                             break;
 
@@ -95,13 +95,17 @@ namespace RPGPoo
                     }
                     else if (enemy.isDead())
                     {
-                        hero.TotalExp += enemy.GiveExp;
+                        var levelUp = hero.addGainExp(enemy.GiveExp);
+
+                        if (levelUp)
+                        {
+                            Console.WriteLine("\t\t Parabéns você alcançou o level:" + hero.level);
+                        }
 
                         Console.Clear();
                         Console.WriteLine("\n\nVoce venceu, obteve " + enemy.GiveExp + " xp");
-                        Console.WriteLine("Seu Total de Xp é: " + hero.TotalExp);
+                        Console.WriteLine("Seu Total de Xp é: " + hero.totalExp);
                         
-
                         Console.ReadKey();
 
                         inFight = false;

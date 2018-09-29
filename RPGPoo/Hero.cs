@@ -9,9 +9,9 @@ namespace RPGPoo
     class Hero : BaseUnit
     {
 
-        int totalExp;
+        public int totalExp;
 
-        ClassType classType;
+        public ClassType classType;
 
         public Hero(String name, ClassType classType)
         {
@@ -19,6 +19,20 @@ namespace RPGPoo
             this.classType = classType;
         }
 
-        public int TotalExp { get => totalExp; set => totalExp = value; }
+        public bool addGainExp(int giveExp)
+        {
+            const int baseExp = 200;
+            totalExp += giveExp;
+
+            if (totalExp >= baseExp * level)
+            {
+                level++;
+                totalExp = 0;
+
+                return true;
+            }
+
+            return false;
+        }
     }
 }
