@@ -8,11 +8,25 @@ namespace RPGPoo
 {
     class Program
     {
-        static bool isRunning = true;
+        static void PrintColored(string value, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(value);
+            Console.ResetColor();
+        }
 
+        static void PrintColoredLine(string value, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(value);
+            Console.ResetColor();
+        }
+
+        static bool isRunning = true;
+        
         static void Main(string[] args)
         {
-            Console.WriteLine("|| RPG GAME ||\n\n");
+            PrintColoredLine("|| RPG GAME ||\n\n", ConsoleColor.Blue);
             Console.Write("Digite seu nome: ");
 
             var heroName = Console.ReadLine();
@@ -45,7 +59,7 @@ namespace RPGPoo
                     Console.Clear();
                     Console.WriteLine("\n\n-> Controles: Atacar [a] - Defender [d]\n\n");
                     Console.Write("Sua Vida: \t\t");
-                    Console.Write(hero.life);
+                    Console.ResetColor();
                     Console.Write("\tSua Mana: \t\t");
                     Console.WriteLine(hero.mana);
                     Console.Write("Vida do inimigo: \t");
@@ -105,6 +119,7 @@ namespace RPGPoo
                         Console.Clear();
                         Console.WriteLine("\n\nVoce venceu, obteve " + enemy.GiveExp + " xp");
                         Console.WriteLine("Seu Total de Xp é: " + hero.totalExp);
+                        Console.WriteLine("Seu level atual é: " + hero.level);
                         
                         Console.ReadKey();
 
