@@ -22,6 +22,13 @@ namespace RPGPoo
             Console.ResetColor();
         }
 
+        static Int32 rollTheDices(int size)
+        {
+            var dice = new Random().Next(size) + 1;
+
+            return dice;
+        }
+
         static bool isRunning = true;
         
         static void Main(string[] args)
@@ -40,7 +47,6 @@ namespace RPGPoo
             while (isRunning)
             {
                 Console.Clear();
-                Console.WriteLine("|| INIMIGO ENCONTRADO ||\n\n");
 
                 var enemy = EnemyCreator.createRandomEnemy();
 
@@ -57,33 +63,69 @@ namespace RPGPoo
                     
 
                     Console.Clear();
-                    Console.WriteLine("\n\n-> Controles: Atacar [a] - Defender [d]\n\n");
+                    PrintColoredLine("|| INIMIGO ENCONTRADO ||", ConsoleColor.Red);
+                    Console.WriteLine("\n\n-> Role o dado de Iniciativa [D] ou Tente Fugir! [F] \n\n");
+                    //Console.WriteLine("\n\n-> Controles: Atacar [a] - Defender [d]\n\n");
                     Console.Write("Sua Vida: \t\t");
-                    Console.ResetColor();
+                    Console.Write(hero.life);
                     Console.Write("\tSua Mana: \t\t");
                     Console.WriteLine(hero.mana);
                     Console.Write("Vida do inimigo: \t");
                     Console.Write(enemy.life);
                     Console.Write("\tMana do inimigo: \t");
                     Console.WriteLine(enemy.mana);
-
+                    
+                    
                     var actionType = ActionType.NONE;
                     var controlNotSelected = true;
                     do
                     {
-                        Console.Write("\nO que fazer? ");
+                        //Console.Write("\nO que fazer? ");
 
                         var key = Console.ReadKey().Key;
-                        if (key == ConsoleKey.A)
+
+                        switch (key)
                         {
-                            actionType = ActionType.ATTACK;
-                            controlNotSelected = false;
+                           
+                            case ConsoleKey.D:
+
+                                
+                                //var rollFirstStrike = new Random().Next(20) + 1;
+                                Console.WriteLine("\n Você Tirou:" + rollTheDices(20));
+                                
+                                break;
+
+                            case ConsoleKey.F:
+                                int rollGetAway = new Random().Next(20) + 1;
+                                if (rollGetAway <= 5 || rollGetAway == 1)
+                                {
+                                    Console.WriteLine("Você Tirou:" + rollGetAway + "Impossivel fugir!");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Fuga Bem Sucedida!");
+                                    inFight = false;
+                                    isRunning = false;
+
+                                }
+                                break;
+
+
+
+
+
                         }
-                        else if (key == ConsoleKey.D)
-                        {
-                            actionType = ActionType.DEFENSE;
-                            controlNotSelected = false;
-                        }
+
+                        //if (key == ConsoleKey.A)
+                        //{
+                        //    actionType = ActionType.ATTACK;
+                        //    controlNotSelected = false;
+                        //}
+                       // else if (key == ConsoleKey.D)
+                        //{
+                        //    actionType = ActionType.DEFENSE;
+                        //    controlNotSelected = false;
+                        //}
                     }
                     while (controlNotSelected);
 

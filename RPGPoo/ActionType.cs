@@ -10,6 +10,7 @@ namespace RPGPoo
     {
         NONE,
         ATTACK,
-        DEFENSE
+        DEFENSE,
+        ROLLDICE
     }
 }
