@@ -22,13 +22,6 @@ namespace RPGPoo
             Console.ResetColor();
         }
 
-        static Int32 rollTheDices(int size)
-        {
-            var dice = new Random().Next(size) + 1;
-
-            return dice;
-        }
-
         static bool isRunning = true;
         
         static void Main(string[] args)
@@ -60,12 +53,9 @@ namespace RPGPoo
                 var inFight = true;
                 while (inFight)
                 {
-                    
-
                     Console.Clear();
                     PrintColoredLine("|| INIMIGO ENCONTRADO ||", ConsoleColor.Red);
                     Console.WriteLine("\n\n-> Role o dado de Iniciativa [D] ou Tente Fugir! [F] \n\n");
-                    //Console.WriteLine("\n\n-> Controles: Atacar [a] - Defender [d]\n\n");
                     Console.Write("Sua Vida: \t\t");
                     Console.Write(hero.life);
                     Console.Write("\tSua Mana: \t\t");
@@ -80,52 +70,32 @@ namespace RPGPoo
                     var controlNotSelected = true;
                     do
                     {
-                        //Console.Write("\nO que fazer? ");
-
                         var key = Console.ReadKey().Key;
+                        var valueDice = Dice.rollD20();
 
                         switch (key)
                         {
                            
                             case ConsoleKey.D:
 
-                                
-                                //var rollFirstStrike = new Random().Next(20) + 1;
-                                Console.WriteLine("\n Você Tirou:" + rollTheDices(20));
+                                Console.WriteLine("\n Você Tirou:" + valueDice);
                                 
                                 break;
 
                             case ConsoleKey.F:
-                                int rollGetAway = new Random().Next(20) + 1;
-                                if (rollGetAway <= 5 || rollGetAway == 1)
+                                
+                                if (valueDice <= 5 || valueDice == 1)
                                 {
-                                    Console.WriteLine("Você Tirou:" + rollGetAway + "Impossivel fugir!");
+                                    Console.WriteLine("Você Tirou:" + valueDice + "Impossivel fugir!");
                                 }
                                 else
                                 {
                                     Console.WriteLine("Fuga Bem Sucedida!");
-                                    inFight = false;
-                                    isRunning = false;
-
+                                    
+                                    controlNotSelected = false;
                                 }
                                 break;
-
-
-
-
-
                         }
-
-                        //if (key == ConsoleKey.A)
-                        //{
-                        //    actionType = ActionType.ATTACK;
-                        //    controlNotSelected = false;
-                        //}
-                       // else if (key == ConsoleKey.D)
-                        //{
-                        //    actionType = ActionType.DEFENSE;
-                        //    controlNotSelected = false;
-                        //}
                     }
                     while (controlNotSelected);
 
@@ -176,3 +146,4 @@ namespace RPGPoo
         }
     }
 }
+
